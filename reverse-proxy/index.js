@@ -5,7 +5,7 @@ const httpProxy = require("http-proxy");
 const app = express();
 const PORT = 8000;
 
-const BASE_PATH = ""; // base URL
+const BASE_PATH = "/__outputs/"; // "<link>.com/__outputs/" base URL
 
 const proxy = httpProxy.createProxy();
 // It is used to create a reverse proxy server

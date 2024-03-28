@@ -35,17 +35,14 @@ COPY package*.json .
 # Above will copy the package.json and package-lock.json files from the build-server directory to the /home/app directory in the ubuntu image
 
 RUN npm install 
-<<<<<<< HEAD
-RUN chmod +x main.sh
-# Above will install the nodejs packages and set the main.sh file as executable
-RUN chmod +x script.js
-=======
-RUN chmod +x maim. sh
-# Above will install the nodejs packages and set the main.sh file as executable
-RUN chmod +x script. js
->>>>>>> df4ba13 (Added the Reverse proxy and api-server)
-# Above will set the script.js file as executable
 
-ENTRYPOINT [ "/home/app/main.sh" ]
+RUN chmod +x main.sh script.js
+
+RUN sed -i 's/\r$//' main.sh
+# Above will remove the carriage return character from the main.sh file which is added by the windows operating system
+
+# Above will set the main.sh and script.js file as executable
+
+ENTRYPOINT ["/bin/sh", "-c", "/home/app/main.sh"]
 # Above will set the entrypoint of the docker image to /home/app/main.sh
 # main.sh will be used to clone the code from the git repository and run the build and test commands

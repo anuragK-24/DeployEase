@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "@aws-sdk/client-ecs": "^3.542.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "random-word-slugs": "^0.1.7"
   }
 }

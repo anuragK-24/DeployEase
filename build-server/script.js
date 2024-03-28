@@ -15,7 +15,7 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 // PutObjectCommand is used to upload files to the S3 bucket
 
 const s3Client = new S3Client({
-  region: "", //us-west-1
+  region: "", //ap-south-1
   credentials: {
     accessKeyId: "", //process.env.AWS_ACCESS_KEY_ID
     secretAccessKey: "", //process.env.AWS_SECRET_ACCESS_KEY
@@ -70,10 +70,10 @@ async function init() {
       // AWS SDKforJavaScript v3
 
       const command = new PutObjectCommand({
-        Bucket: "bucket-name",
+        Bucket: "",// bucket name
         Key: `__outputs/${PROJECT_ID}/${file}`, // on which path we are storing the file
         Body: fs.createReadStream(filePath), //by file path we are reading the file
-        ContentType: mime.lookup(filePath) //by file path we are getting the type of the file
+        ContentType: mime.lookup(filePath), //by file path we are getting the type of the file
       });
       await s3Client.send(command); // Above code will send the file to the S3 bucket
 
