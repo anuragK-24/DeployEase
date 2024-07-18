@@ -1,4 +1,6 @@
 # DeployEase
+![b_deployment](https://github.com/user-attachments/assets/93bc0525-cc93-4578-9ff6-5a423300c4a0)
+
 
 ### Blog : [Click Me](https://anuragk24.hashnode.dev/decoding-how-fullstack-applications-get-online)
 
